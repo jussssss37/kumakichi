@@ -97,20 +97,20 @@ export default function MenuItemCard({
   return (
     <div className="card-elegant text-center group animate-slideUp">
       {showImage ? (
-        <div className="relative w-56 h-56 mx-auto mb-6 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300 shadow-elegant-lg">
+        <div className="relative w-full aspect-square mx-auto mb-6 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300 shadow-elegant-lg">
           <Image
             src={imagePath}
             alt={item.name}
             width={224}
             height={224}
-            className="object-cover"
+            className="object-cover w-full h-full"
             onError={(e) => {
               // 画像が見つからない場合は絵文字を表示
               const target = e.target as HTMLImageElement
               target.style.display = 'none'
               const parent = target.parentElement
               if (parent) {
-                parent.innerHTML = `<div class="w-56 h-56 bg-gradient-to-br from-kumakichi-red to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                parent.innerHTML = `<div class="w-full aspect-square bg-gradient-to-br from-kumakichi-red to-red-600 rounded-2xl flex items-center justify-center">
                   <span class="text-8xl">${icon}</span>
                 </div>`
               }
@@ -118,7 +118,7 @@ export default function MenuItemCard({
           />
         </div>
       ) : (
-        <div className="w-56 h-56 bg-gradient-to-br from-kumakichi-red to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform duration-300 shadow-elegant-lg">
+        <div className="w-full aspect-square bg-gradient-to-br from-kumakichi-red to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform duration-300 shadow-elegant-lg">
           <span className="text-8xl">{icon}</span>
         </div>
       )}
