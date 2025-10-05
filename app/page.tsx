@@ -20,6 +20,7 @@ export default function Home() {
             src={`${basePath}/images/menu/ramen/men_misotya.jpg`}
             alt="みそ味チャンポン"
             className="w-full h-full object-cover"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
