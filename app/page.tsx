@@ -132,8 +132,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Menu Preview Section */}
+      {/* YouTube Video Section */}
       <section className="section-padding bg-kumakichi-gray-100">
+        <div className="container-wide">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="animate-slideUp">
+                <h2 className="text-4xl md:text-5xl heading-display mb-8">
+                  店舗<span className="text-accent">紹介動画</span>
+                </h2>
+                <div className="h-1 w-16 bg-kumakichi-gold mx-auto mb-6"></div>
+                <p className="text-xl text-kumakichi-gray-800">熊きちの魅力をご覧ください</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-3xl p-4 shadow-elegant-lg animate-slideUp animate-delay-200">
+              <div className="aspect-video w-full bg-kumakichi-gray-200 rounded-2xl overflow-hidden">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/MPf505R3zu8"
+                  title="ラーメン熊きち 店舗紹介"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="rounded-2xl"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Menu Preview Section */}
+      <section className="section-padding bg-kumakichi-cream">
         <div className="container-wide">
           <div className="text-center mb-16">
             <div className="animate-slideUp">
