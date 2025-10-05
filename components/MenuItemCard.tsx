@@ -124,7 +124,7 @@ export default function MenuItemCard({
       )}
       
       <div className="mb-4">
-        <h3 className="text-xl font-display font-bold mb-3 text-kumakichi-dark">{item.name}</h3>
+        <h3 className="text-lg md:text-xl font-display font-bold mb-3 text-kumakichi-dark break-words">{item.name}</h3>
         {item.pieces && (
           <p className="text-sm text-kumakichi-gray-800 mb-1">({item.pieces}個入り)</p>
         )}
