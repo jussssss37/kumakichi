@@ -18,10 +18,10 @@ export default function MenuItemCard({
   const category = item.category || 'ramen'
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
   const imagePath = `${basePath}/images/menu/${category}/${item.image}`
-  
+
   // 空の説明文にデフォルトテキストを設定
-  const description = item.description || '店主が心を込めて作る一品です'
-  
+  const description = item.description || ''
+
   // 空のアイコンにカテゴリ別のデフォルトアイコンを設定
   const getDefaultIcon = (category: string): string => {
     switch (category) {
@@ -32,9 +32,9 @@ export default function MenuItemCard({
       default: return '🍜'
     }
   }
-  
+
   const icon = item.icon || getDefaultIcon(category)
-  
+
   if (layout === 'horizontal') {
     return (
       <div className="card-elegant group animate-slideUp">
@@ -122,7 +122,7 @@ export default function MenuItemCard({
           <span className="text-8xl">{icon}</span>
         </div>
       )}
-      
+
       <div className="mb-4">
         <h3 className="text-lg md:text-xl font-display font-bold mb-3 text-kumakichi-dark break-words">{item.name}</h3>
         {item.pieces && (
@@ -133,9 +133,9 @@ export default function MenuItemCard({
         )}
         <p className="text-2xl font-bold text-kumakichi-gold mb-4">¥{item.price}</p>
       </div>
-      
+
       <p className="text-kumakichi-gray-800 text-sm leading-relaxed mb-4">{description}</p>
-      
+
       {item.popular && (
         <div className="flex justify-center">
           <span className="bg-kumakichi-red text-white px-3 py-1 rounded-full text-sm font-semibold">
