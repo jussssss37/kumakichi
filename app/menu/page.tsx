@@ -41,10 +41,10 @@ export default function Menu() {
               <p className="text-xl text-kumakichi-gray-800">{menuData.ramen.subtitle}</p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {menuData.ramen.items.map((item, index) => (
                 <div key={index} className={`animate-delay-${(index + 1) * 100}`}>
-                  <MenuItemCard item={item} layout="horizontal" showImage={true} />
+                  <MenuItemCard item={item} layout="vertical" showImage={true} />
                 </div>
               ))}
             </div>
