@@ -123,7 +123,7 @@ export default function MenuItemCard({
         </div>
       )}
 
-      <div className="mb-4">
+      <div>
         <h3 className="text-lg md:text-xl font-display font-bold mb-3 text-kumakichi-dark break-words">{item.name}</h3>
         {item.pieces && (
           <p className="text-sm text-kumakichi-gray-800 mb-1">({item.pieces}個入り)</p>
@@ -131,13 +131,15 @@ export default function MenuItemCard({
         {item.size && (
           <p className="text-sm text-kumakichi-gray-800 mb-1">({item.size})</p>
         )}
-        <p className="text-2xl font-bold text-kumakichi-gold mb-4">¥{item.price}</p>
+        <p className="text-2xl font-bold text-kumakichi-gold mt-2">¥{item.price}</p>
       </div>
 
-      <p className="text-kumakichi-gray-800 text-sm leading-relaxed mb-4">{description}</p>
+      {description && (
+        <p className="text-kumakichi-gray-800 text-sm leading-relaxed mt-4">{description}</p>
+      )}
 
       {item.popular && (
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-4">
           <span className="bg-kumakichi-red text-white px-3 py-1 rounded-full text-sm font-semibold">
             人気メニュー
           </span>
