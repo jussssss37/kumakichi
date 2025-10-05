@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production'
-const basePath = isProd ? '/kumakichi' : ''
+// カスタムドメイン使用時は空文字列に
+const basePath = ''
 
 const nextConfig = {
   output: 'export',
