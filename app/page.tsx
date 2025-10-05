@@ -153,10 +153,9 @@ export default function Home() {
                   height="100%"
                   src="https://www.youtube.com/embed/MPf505R3zu8"
                   title="ラーメン熊きち 店舗紹介"
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
-                  className="rounded-2xl"
+                  className="rounded-2xl border-0"
                 ></iframe>
               </div>
             </div>
