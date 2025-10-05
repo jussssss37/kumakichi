@@ -1,0 +1,262 @@
+# ラーメン熊きち メニューデータ
+# 更新日: 2024-08-24
+
+ramen:
+  title: "ラーメンメニュー"
+  subtitle: "熊きち自慢の本格ラーメン"
+  items:
+    - name: "みそ味チャンポン"
+      price: 900
+      description: ""
+      popular: true
+      icon: "🍲"
+      image: "men_misotya.jpg"
+      category: "ramen"
+
+    - name: "チャンポン"
+      price: 750
+      description: ""
+      popular: true
+      icon: "🍜"
+      image: ""
+      category: "ramen"
+      
+    - name: "つけ麺"
+      price: 800
+      description: ""
+      popular: false
+      icon: "🥣"
+      image: "men_tuke.JPG"
+      category: "ramen"
+      
+    - name: "釜玉ラーメン"
+      price: 600
+      description: ""
+      popular: false
+      icon: "🍜"
+      image: "men_kamatama.jpg"
+      category: "ramen"
+      
+    - name: "中華そば"
+      price: 600
+      description: ""
+      popular: false
+      icon: "🥄"
+      image: "men_soba.jpg"
+      category: "ramen"
+
+    - name: "豚骨ラーメン"
+      price: 700
+      description: ""
+      popular: false
+      icon: ""
+      image: "men_tonkotu.JPG"
+
+    - name: "ラーメン"
+      price: 600
+      description: ""
+      popular: false
+      icon: ""
+      image: ""
+
+    - name: "チャーシューメン"
+      price: 800
+      description: ""
+      popular: false
+      icon: ""
+      image: "men_tya.jpg"
+
+    - name: "ワンタンメン"
+      price: 800
+      description: ""
+      popular: false
+      icon: ""
+      image: "men_wan.jpg"
+
+    - name: "スペシャルラーメン"
+      price: 900
+      description: "チャーシュー・キムチ・ワカメ入り"
+      popular: false
+      icon: ""
+      image: ""
+
+rice:
+  title: "ご飯もの"
+  subtitle: "ラーメンとの相性抜群"
+  items:
+    - name: "チャーハン"
+      price: 600
+      description: ""
+      icon: "🍛"
+      image: "rice_tya.jpg"
+      category: "rice"
+      
+    - name: "キムチチャーハン"
+      price: 700
+      description: ""
+      icon: "🍖"
+      image: ""
+      category: "rice"
+    - name: "ニンニクチャーハン"
+      price: 700
+      description: ""
+      icon: "🍖"
+      image: ""
+      category: "rice"
+      
+    - name: "カレーチャーハン"
+      price: 700
+      description: ""
+      icon: "🍖"
+      image: ""
+      category: "rice"
+      
+    - name: "黒めし"
+      price: 700
+      description: ""
+      icon: "🍖"
+      image: "rice_kuro.jpg"
+      category: "rice"
+      
+    - name: "熊きちTKG"
+      price: 300
+      description: ""
+      icon: "🍖"
+      image: "rice_tkg.JPG"
+      category: "rice"
+      
+    - name: "天津麻婆丼"
+      price: 700
+      description: ""
+      icon: "🍖"
+      image: "rice_tenma.JPG"
+      category: "rice"
+      
+    - name: "ふわとろチャーハン"
+      price: 600
+      description: "チーズ入"
+      icon: "🍖"
+      image: "rice_huwa.JPG"
+      category: "rice"
+      
+    - name: "天津飯"
+      price: 600
+      description: ""
+      icon: "🍖"
+      image: "rice_tenshin.jpg"
+      category: "rice"
+      
+    - name: "スペシャルチャーハン"
+      price: 900
+      description: "えび・チャーシュー角切り入"
+      icon: "🍖"
+      image: "rice_spe.jpg"
+      category: "rice"
+      
+    - name: "中華丼"
+      price: 600
+      description: ""
+      icon: "🍖"
+      image: "rice_tyuka.jpg"
+      category: "rice"
+      
+    - name: "キムチ丼"
+      price: 700
+      description: ""
+      icon: "🍖"
+      image: ""
+      category: "rice"
+      
+      
+    - name: "ライス"
+      price: 150
+      description: ""
+      icon: "🍚"
+      image: ""
+      category: "rice"
+
+side:
+  title: "サイドメニュー"
+  subtitle: "お酒のお供にも最適"
+  items:
+    - name: "餃子"
+      price: 250
+      description: "5個入"
+      icon: "🥟"
+      image: "side_gyoza.jpg"
+      category: "side"
+      pieces: 5
+      
+    - name: "豚キムチ"
+      price: 750
+      description: ""
+      icon: "🍗"
+      image: ""
+      category: "side"
+      
+    - name: "焼きそば"
+      price: 600
+      description: ""
+      icon: "🎋"
+      image: ""
+      category: "side"
+      
+    - name: "あげそば"
+      price: 600
+      description: ""
+      icon: "🍖"
+      image: ""
+      category: "side"
+
+    - name: "もやし炒め"
+      price: 550
+      description: ""
+      icon: "🍖"
+      image: ""
+      category: "side"
+
+    - name: "野菜炒め"
+      price: 550
+      description: ""
+      icon: "🍖"
+      image: ""
+      category: "side"
+
+    - name: "キムチ"
+      price: 200
+      description: ""
+      icon: "🍖"
+      image: ""
+      category: "side"
+
+drink:
+  title: "ドリンクメニュー"
+  subtitle: "お食事のお供に"
+  items:
+    - name: "瓶ビール"
+      price: 500
+      description: "アサヒスーパードライ"
+      icon: "🍺"
+      image: ""
+      category: "drink"
+      size: "中瓶"
+      
+    - name: "生ビール"
+      price: 500
+      description: "キリン一番搾り"
+      icon: "🍵"
+      image: ""
+      category: "drink"
+      
+# メニューメタデータ
+metadata:
+  last_updated: "2025-08-24"
+  currency: "JPY"
+  tax_included: true
+  notes:
+    - "表示価格は全て税込み価格です"
+    - "麺がなくなり次第終了となる場合があります"
+    - "出前も承っております（お電話でご注文ください）"
+    - "アレルギーをお持ちの方は事前にお声かけください"
+    - "現金のみのお支払いとなります"
+    - "10台分の無料駐車場をご用意しております"
