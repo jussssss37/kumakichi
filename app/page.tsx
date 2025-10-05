@@ -290,7 +290,7 @@ export default function Home() {
             <div className="bg-white rounded-3xl p-4 shadow-elegant-lg animate-slideUp animate-delay-200">
               <div className="aspect-video w-full bg-kumakichi-gray-200 rounded-2xl flex items-center justify-center">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.8!2d135.5!3d34.78!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ2JzQ4LjAiTiAxMzXCsDMwJzAwLjAiRQ!5e0!3m2!1sja!2sjp!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1638.1409682385051!2d135.5532223165285!3d34.79884809744906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e33d28c1c3eb%3A0x434f9760c71a59f2!2z44Op44O844Oh44Oz54aK44GN44Gh!5e0!3m2!1sja!2sus!4v1759667009206!5m2!1sja!2sus"
                   width="100%"
                   height="100%"
                   allowFullScreen
