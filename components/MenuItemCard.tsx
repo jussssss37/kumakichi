@@ -9,14 +9,15 @@ interface MenuItemCardProps {
   showImage?: boolean
 }
 
-export default function MenuItemCard({ 
-  item, 
-  layout = 'vertical', 
-  showImage = true 
+export default function MenuItemCard({
+  item,
+  layout = 'vertical',
+  showImage = true
 }: MenuItemCardProps) {
   // カテゴリが未設定の場合はラーメンとして扱う
   const category = item.category || 'ramen'
-  const imagePath = `/images/menu/${category}/${item.image}`
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+  const imagePath = `${basePath}/images/menu/${category}/${item.image}`
   
   // 空の説明文にデフォルトテキストを設定
   const description = item.description || '店主が心を込めて作る一品です'

@@ -6,17 +6,18 @@ import { getPopularItems } from '@/lib/menu'
 
 export default function Home() {
   const popularItems = getPopularItems()
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
   return (
     <main className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="/images/menu/ramen/men_misotya.jpg"
+          <img
+            src={`${basePath}/images/menu/ramen/men_misotya.jpg`}
             alt="みそ味チャンポン"
             className="w-full h-full object-cover"
           />
