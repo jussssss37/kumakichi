@@ -111,15 +111,6 @@ export default function Home() {
 
                   <div className="bg-kumakichi-gray-100 rounded-2xl aspect-square flex items-center justify-center">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="text-2xl">🍜</span>
-                      </div>
-                      <p className="text-sm text-kumakichi-gray-800">限定メニュー</p>
-                    </div>
-                  </div>
-
-                  <div className="bg-kumakichi-gray-100 rounded-2xl aspect-square flex items-center justify-center">
-                    <div className="text-center">
                       <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span className="text-2xl">📸</span>
                       </div>
