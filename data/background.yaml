@@ -2,7 +2,7 @@
 
 pages:
   home:
-    background_image: "images/store/gaikan.jpg"
+    background_image: "images/store/gaikan.JPG"
     background_overlay: "bg-black/70"
     description: "トップページの背景画像"
 
