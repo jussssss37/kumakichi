@@ -24,6 +24,7 @@ export interface MenuData {
   ramen: MenuCategory
   rice: MenuCategory
   side: MenuCategory
+  set: MenuCategory
   drink: MenuCategory
   metadata: {
     last_updated: string
@@ -81,6 +82,11 @@ function getFallbackMenuData(): MenuData {
       subtitle: "お酒のお供にも最適",
       items: []
     },
+    set: {
+      title: "セットメニュー",
+      subtitle: "お得なセット",
+      items: []
+    },
     drink: {
       title: "ドリンクメニュー",
       subtitle: "お食事のお供に",
@@ -106,6 +112,7 @@ export function getPopularItems(): MenuItem[] {
     ...menuData.ramen.items,
     ...menuData.rice.items,
     ...menuData.side.items,
+    ...menuData.set.items,
     ...menuData.drink.items
   ]
   return allItems.filter(item => item.popular)
@@ -114,4 +121,55 @@ export function getPopularItems(): MenuItem[] {
 export function getMenuMetadata() {
   const menuData = getMenuData()
   return menuData.metadata
+}
+
+export interface BackgroundConfig {
+  background_image: string
+  background_overlay: string
+  description: string
+}
+
+export interface BackgroundData {
+  pages: {
+    home: BackgroundConfig
+    menu: BackgroundConfig
+  }
+}
+
+let cachedBackgroundData: BackgroundData | null = null
+
+export function getBackgroundData(): BackgroundData {
+  if (cachedBackgroundData) {
+    return cachedBackgroundData
+  }
+
+  try {
+    const backgroundFilePath = path.join(process.cwd(), 'data', 'background.yaml')
+    const fileContents = fs.readFileSync(backgroundFilePath, 'utf8')
+    const backgroundData = yaml.load(fileContents) as BackgroundData
+
+    cachedBackgroundData = backgroundData
+    return backgroundData
+  } catch (error) {
+    console.error('Failed to load background data:', error)
+    return {
+      pages: {
+        home: {
+          background_image: "/images/menu/ramen/men_misotya.jpg",
+          background_overlay: "bg-black/60",
+          description: "トップページの背景画像"
+        },
+        menu: {
+          background_image: "/images/menu/ramen/men_tya.jpg",
+          background_overlay: "bg-black/30",
+          description: "メニューページの背景画像"
+        }
+      }
+    }
+  }
+}
+
+export function getPageBackground(page: 'home' | 'menu'): BackgroundConfig {
+  const backgroundData = getBackgroundData()
+  return backgroundData.pages[page]
 }

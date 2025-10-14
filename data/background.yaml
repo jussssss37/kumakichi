@@ -1,0 +1,12 @@
+# 背景画像設定
+
+pages:
+  home:
+    background_image: "/images/store/gaikan.jpg"
+    background_overlay: "bg-black/70"
+    description: "トップページの背景画像"
+
+  menu:
+    background_image: "/images/menu/ramen/men_misotya.jpg"
+    background_overlay: "bg-black/50"
+    description: "メニューページの背景画像"

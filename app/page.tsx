@@ -2,11 +2,12 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MenuItemCard from '@/components/MenuItemCard'
 import Link from 'next/link'
-import { getPopularItems } from '@/lib/menu'
+import { getPopularItems, getPageBackground } from '@/lib/menu'
 
 export default function Home() {
   const popularItems = getPopularItems()
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+  const backgroundConfig = getPageBackground('home')
 
   return (
     <main className="min-h-screen">
@@ -17,12 +18,12 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src={`${basePath}/images/menu/ramen/men_misotya.jpg`}
-            alt="みそ味チャンポン"
+            src={`${basePath}${backgroundConfig.background_image}`}
+            alt={backgroundConfig.description}
             className="w-full h-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className={`absolute inset-0 ${backgroundConfig.background_overlay}`}></div>
         </div>
 
         <div className="relative z-10 container-wide text-center text-white">
@@ -218,6 +219,33 @@ export default function Home() {
                         <p className="text-green-300 text-sm">🎉 ご家族連れも安心してお越しください</p>
                       </div>
                     </div>
+                  </div>
+                </div>
+
+                <div className="animate-slideInRight animate-delay-300">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-full flex items-center justify-center mr-6">
+                        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-display font-bold text-kumakichi-gold mb-2">Instagram</h3>
+                        <p className="text-white/80">休業情報はこちらでもご連絡します</p>
+                      </div>
+                    </div>
+                    <a
+                      href="https://www.instagram.com/kumakichi1976/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-2xl font-bold text-white hover:text-kumakichi-gold transition-colors duration-300 flex items-center"
+                    >
+                      @kumakichi1976
+                      <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>

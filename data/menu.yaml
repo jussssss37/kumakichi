@@ -18,7 +18,7 @@ ramen:
       description: ""
       popular: true
       icon: "🍜"
-      image: ""
+      image: "men_tya.jpg"
       category: "ramen"
       
     - name: "つけ麺"
@@ -50,21 +50,21 @@ ramen:
       description: ""
       popular: false
       icon: ""
-      image: "men_tonkotu.JPG"
+      image: "men_tonkotu.jpg"
 
     - name: "ラーメン"
       price: 600
       description: ""
       popular: false
       icon: ""
-      image: ""
+      image: "men_men.jpg"
 
     - name: "チャーシューメン"
       price: 800
       description: ""
       popular: false
       icon: ""
-      image: "men_tya.jpg"
+      image: "men_niku.jpg"
 
     - name: "ワンタンメン"
       price: 800
@@ -78,7 +78,7 @@ ramen:
       description: "チャーシュー・キムチ・ワカメ入り"
       popular: false
       icon: ""
-      image: ""
+      image: "men_spe.jpg"
 
 rice:
   title: "ご飯もの"
@@ -181,7 +181,7 @@ side:
   items:
     - name: "餃子"
       price: 250
-      description: "5個入"
+      description: ""
       icon: "🥟"
       image: "side_gyoza.jpg"
       category: "side"
@@ -191,7 +191,7 @@ side:
       price: 750
       description: ""
       icon: "🍗"
-      image: ""
+      image: "side_buta.jpg"
       category: "side"
       
     - name: "焼きそば"
@@ -229,6 +229,31 @@ side:
       image: ""
       category: "side"
 
+set:
+  title: "セットメニュー"
+  subtitle: "お好きなラーメンにプラスで追加できます。"
+  items:
+    - name: "ミニチャーハンセット"
+      price: 300
+      description: ""
+      icon: "🍜"
+      image: "set_tya.jpg"
+      category: "set"
+
+    - name: "ミニ焼豚丼"
+      price: 250
+      description: ""
+      icon: "🍜"
+      image: "set_cha.jpg"
+      category: "set"
+
+    - name: "卵かけご飯"
+      price: 100
+      description: ""
+      icon: "🥚"
+      image: "set_egg.jpg"
+      category: "set"
+
 drink:
   title: "ドリンクメニュー"
   subtitle: "お食事のお供に"
@@ -240,11 +265,11 @@ drink:
       image: ""
       category: "drink"
       size: "中瓶"
-      
+
     - name: "生ビール"
       price: 500
       description: "キリン一番搾り"
-      icon: "🍵"
+      icon: "🍺"
       image: ""
       category: "drink"
       

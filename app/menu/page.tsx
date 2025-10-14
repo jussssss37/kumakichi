@@ -1,10 +1,12 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MenuItemCard from '@/components/MenuItemCard'
-import { getMenuData } from '@/lib/menu'
+import { getMenuData, getPageBackground } from '@/lib/menu'
 
 export default function Menu() {
   const menuData = getMenuData()
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+  const backgroundConfig = getPageBackground('menu')
 
   return (
     <main className="min-h-screen">
@@ -12,8 +14,14 @@ export default function Menu() {
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-hero-pattern bg-chopstick-pattern bg-wood-texture">
-          <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0">
+          <img
+            src={`${basePath}${backgroundConfig.background_image}`}
+            alt={backgroundConfig.description}
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className={`absolute inset-0 ${backgroundConfig.background_overlay}`}></div>
         </div>
 
         <div className="relative z-10 container-wide text-center text-white">
@@ -81,6 +89,25 @@ export default function Menu() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {menuData.side.items.map((item, index) => (
+                <div key={index} className={`animate-delay-${(index + 1) * 100}`}>
+                  <MenuItemCard item={item} layout="vertical" showImage={true} />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Set Menu */}
+          <section className="mb-20">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl heading-display mb-6">
+                {menuData.set.title.replace('メニュー', '')}<span className="text-accent">メニュー</span>
+              </h2>
+              <div className="h-1 w-16 bg-kumakichi-gold mx-auto mb-6"></div>
+              <p className="text-xl text-kumakichi-gray-800">{menuData.set.subtitle}</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {menuData.set.items.map((item, index) => (
                 <div key={index} className={`animate-delay-${(index + 1) * 100}`}>
                   <MenuItemCard item={item} layout="vertical" showImage={true} />
                 </div>

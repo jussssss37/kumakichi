@@ -16,8 +16,10 @@ export default function MenuItemCard({
 }: MenuItemCardProps) {
   // カテゴリが未設定の場合はラーメンとして扱う
   const category = item.category || 'ramen'
+  // セットメニューの画像はsideディレクトリにある
+  const imageCategory = category === 'set' ? 'side' : category
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-  const imagePath = `${basePath}/images/menu/${category}/${item.image}`
+  const imagePath = `${basePath}/images/menu/${imageCategory}/${item.image}`
 
   // 空の説明文にデフォルトテキストを設定
   const description = item.description || ''
@@ -28,6 +30,7 @@ export default function MenuItemCard({
       case 'ramen': return '🍜'
       case 'rice': return '🍛'
       case 'side': return '🥟'
+      case 'set': return '🍱'
       case 'drink': return '🍺'
       default: return '🍜'
     }
@@ -79,7 +82,9 @@ export default function MenuItemCard({
                 )}
               </div>
               <div className="text-right">
-                <p className="text-2xl font-bold text-kumakichi-gold">¥{item.price}</p>
+                <p className="text-2xl font-bold text-kumakichi-gold">
+                  {category === 'set' ? `+${item.price}円` : `${item.price}円`}
+                </p>
                 {item.popular && (
                   <span className="bg-kumakichi-red text-white px-2 py-1 rounded-full text-xs font-semibold mt-1 inline-block">
                     人気
@@ -90,6 +95,37 @@ export default function MenuItemCard({
             <p className="text-kumakichi-gray-800 leading-relaxed">{description}</p>
           </div>
         </div>
+      </div>
+    )
+  }
+
+  // 画像がない場合はシンプルな表示
+  if (!item.image) {
+    return (
+      <div className="card-elegant group animate-slideUp h-full flex flex-col justify-center py-6 px-4 min-h-[140px]">
+        <div className="text-center">
+          <h3 className="text-base md:text-lg font-display font-bold mb-2 text-kumakichi-dark break-words">{item.name}</h3>
+          {item.pieces && (
+            <p className="text-xs text-kumakichi-gray-800 mb-1">({item.pieces}個入り)</p>
+          )}
+          {item.size && (
+            <p className="text-xs text-kumakichi-gray-800 mb-1">({item.size})</p>
+          )}
+          {description && (
+            <p className="text-kumakichi-gray-800 text-xs leading-relaxed mt-1 mb-1">{description}</p>
+          )}
+          <p className="text-xl font-bold text-kumakichi-gold mt-2">
+            {category === 'set' ? `+${item.price}円` : `${item.price}円`}
+          </p>
+        </div>
+
+        {item.popular && (
+          <div className="flex justify-center mt-3">
+            <span className="bg-kumakichi-red text-white px-2 py-1 rounded-full text-xs font-semibold">
+              人気メニュー
+            </span>
+          </div>
+        )}
       </div>
     )
   }
@@ -131,7 +167,9 @@ export default function MenuItemCard({
         {item.size && (
           <p className="text-sm text-kumakichi-gray-800 mb-1">({item.size})</p>
         )}
-        <p className="text-2xl font-bold text-kumakichi-gold mt-2">¥{item.price}</p>
+        <p className="text-2xl font-bold text-kumakichi-gold mt-2">
+          {category === 'set' ? `+${item.price}円` : `${item.price}円`}
+        </p>
       </div>
 
       {description && (
