@@ -18,7 +18,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src={`${basePath}${backgroundConfig.background_image}`}
+            src={`${basePath}/${backgroundConfig.background_image}`}
             alt={backgroundConfig.description}
             className="w-full h-full object-cover"
             loading="eager"

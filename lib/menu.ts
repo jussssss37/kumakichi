@@ -155,13 +155,13 @@ export function getBackgroundData(): BackgroundData {
     return {
       pages: {
         home: {
-          background_image: "/images/menu/ramen/men_misotya.jpg",
-          background_overlay: "bg-black/60",
+          background_image: "images/menu/ramen/men_misotya.jpg",
+          background_overlay: "bg-black/70",
           description: "トップページの背景画像"
         },
         menu: {
-          background_image: "/images/menu/ramen/men_tya.jpg",
-          background_overlay: "bg-black/30",
+          background_image: "images/menu/ramen/men_tya.jpg",
+          background_overlay: "bg-black/50",
           description: "メニューページの背景画像"
         }
       }
