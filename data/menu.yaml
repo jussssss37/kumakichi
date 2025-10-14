@@ -50,8 +50,7 @@ ramen:
       description: ""
       popular: false
       icon: ""
-      image: "men_tonkotu.jpg"
-      category: "ramen"
+      image: "men_tonkotsu.JPG"
 
     - name: "ラーメン"
       price: 600
@@ -59,7 +58,6 @@ ramen:
       popular: false
       icon: ""
       image: "men_men.jpg"
-      category: "ramen"
 
     - name: "チャーシューメン"
       price: 800
@@ -67,7 +65,6 @@ ramen:
       popular: false
       icon: ""
       image: "men_niku.jpg"
-      category: "ramen"
 
     - name: "ワンタンメン"
       price: 800
@@ -75,7 +72,6 @@ ramen:
       popular: false
       icon: ""
       image: "men_wan.jpg"
-      category: "ramen"
 
     - name: "スペシャルラーメン"
       price: 900
@@ -83,7 +79,6 @@ ramen:
       popular: false
       icon: ""
       image: "men_spe.jpg"
-      category: "ramen"
 
 rice:
   title: "ご飯もの"
