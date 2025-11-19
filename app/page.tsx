@@ -1,11 +1,13 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MenuItemCard from '@/components/MenuItemCard'
+import NoticeCard from '@/components/NoticeCard'
 import Link from 'next/link'
-import { getPopularItems, getPageBackground } from '@/lib/menu'
+import { getPopularItems, getPageBackground, getVisibleNotices } from '@/lib/menu'
 
 export default function Home() {
   const popularItems = getPopularItems()
+  const notices = getVisibleNotices()
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
   const backgroundConfig = getPageBackground('home')
 
@@ -62,6 +64,31 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Notices Section */}
+      {notices.length > 0 && (
+        <section className="section-padding bg-white">
+          <div className="container-wide">
+            <div className="text-center mb-12">
+              <div className="animate-slideUp">
+                <h2 className="text-4xl md:text-5xl heading-display mb-8">
+                  お<span className="text-accent">知らせ</span>
+                </h2>
+                <div className="h-1 w-16 bg-kumakichi-gold mx-auto mb-6"></div>
+                <p className="text-xl text-kumakichi-gray-800">最新情報をお届けします</p>
+              </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-4">
+              {notices.map((notice, index) => (
+                <div key={notice.id} className={`animate-slideUp animate-delay-${(index + 2) * 100}`}>
+                  <NoticeCard notice={notice} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* YouTube Video Section */}
       <section className="section-padding bg-kumakichi-gray-100">

@@ -173,3 +173,58 @@ export function getPageBackground(page: 'home' | 'menu'): BackgroundConfig {
   const backgroundData = getBackgroundData()
   return backgroundData.pages[page]
 }
+
+// お知らせ関連の型定義
+export interface Notice {
+  id: number
+  title: string
+  date: string
+  content: string
+  type: 'important' | 'info' | 'warning' | 'event'
+  icon: string
+  visible: boolean
+}
+
+export interface NoticeData {
+  notices: Notice[]
+  metadata: {
+    last_updated: string
+    max_display: number
+    notes: string[]
+  }
+}
+
+let cachedNoticeData: NoticeData | null = null
+
+export function getNoticeData(): NoticeData {
+  if (cachedNoticeData) {
+    return cachedNoticeData
+  }
+
+  try {
+    const noticeFilePath = path.join(process.cwd(), 'data', 'notices.yaml')
+    const fileContents = fs.readFileSync(noticeFilePath, 'utf8')
+    const noticeData = yaml.load(fileContents) as NoticeData
+
+    cachedNoticeData = noticeData
+    return noticeData
+  } catch (error) {
+    console.error('Failed to load notice data:', error)
+    return {
+      notices: [],
+      metadata: {
+        last_updated: new Date().toISOString().split('T')[0],
+        max_display: 5,
+        notes: []
+      }
+    }
+  }
+}
+
+export function getVisibleNotices(): Notice[] {
+  const noticeData = getNoticeData()
+  return noticeData.notices
+    .filter(notice => notice.visible)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, noticeData.metadata.max_display)
+}

@@ -1,0 +1,42 @@
+# ラーメン熊きち お知らせデータ
+# 更新日: 2025-11-19
+
+notices:
+  - id: 1
+    title: "臨時休業のお知らせ"
+    date: "2025-11-19"
+    content:
+    - 11/21(金)と11/22(土)は臨時休業させていただきます。
+    - 11/23(日)はお昼営業を休業します。17時から営業開始です。
+    type: "warning"
+    icon: "⚠️"
+    visible: true
+
+  - id: 2
+    title: "新メニュー登場"
+    date: "2025-11-15"
+    content: "冬季限定の味噌ラーメンが登場しました。ぜひお試しください。"
+    type: "info"
+    icon: "🍜"
+    visible: false
+
+  - id: 3
+    title: "臨時休業のお知らせ"
+    date: "2025-11-10"
+    content: "11月20日（水）は都合により臨時休業とさせていただきます。"
+    type: "warning"
+    icon: "⚠️"
+    visible: false
+
+# お知らせの種類:
+# - important: 重要なお知らせ（赤系）
+# - info: 一般的な情報（青系）
+# - warning: 注意喚起（黄色系）
+# - event: イベント情報（緑系）
+
+metadata:
+  last_updated: "2025-11-19"
+  max_display: 5
+  notes:
+    - "visibleがtrueのお知らせのみ表示されます"
+    - "日付順（新しい順）に表示されます"
