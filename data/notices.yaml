@@ -1,5 +1,4 @@
 # ラーメン熊きち お知らせデータ
-# 更新日: 2025-11-19
 
 notices:
   - id: 1
@@ -10,7 +9,7 @@ notices:
     - 2026年1/1(木)と1/2(金)は休業します。
     type: "warning"
     icon: "⚠️"
-    visible: true
+    visible: false
 
   - id: 2
     title: "新メニュー登場"
@@ -26,7 +25,7 @@ notices:
     content: "12/14(日)は都合により臨時休業とさせていただきます。"
     type: "warning"
     icon: "⚠️"
-    visible: true
+    visible: false
 
 # お知らせの種類:
 # - important: 重要なお知らせ（赤系）
