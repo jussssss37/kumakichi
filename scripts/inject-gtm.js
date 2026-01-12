@@ -17,16 +17,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 function injectGTM(filePath) {
   let html = fs.readFileSync(filePath, 'utf8');
 
-  // <head>タグの直後にGTMスクリプトを挿入
-  if (!html.includes('GTM-KKP36CQQ')) {
-    html = html.replace(/<head>/, `<head>${GTM_HEAD_SCRIPT}`);
-    html = html.replace(/<body([^>]*)>/, `<body$1>${GTM_BODY_NOSCRIPT}`);
-
-    fs.writeFileSync(filePath, html, 'utf8');
-    console.log(`✓ GTM injected into ${filePath}`);
-  } else {
+  // GTMがすでに挿入されているかチェック
+  if (html.includes('GTM-KKP36CQQ')) {
     console.log(`- GTM already exists in ${filePath}`);
+    return;
   }
+
+  // <head>タグの直後にGTMスクリプトを挿入
+  html = html.replace(/<head>/, `<head>${GTM_HEAD_SCRIPT}`);
+
+  // <body>タグの直後にnoscriptを挿入
+  html = html.replace(/<body([^>]*)>/, `<body$1>${GTM_BODY_NOSCRIPT}`);
+
+  fs.writeFileSync(filePath, html, 'utf8');
+  console.log(`✓ GTM injected into ${filePath}`);
 }
 
 function processDirectory(dirPath) {
@@ -37,8 +41,6 @@ function processDirectory(dirPath) {
 
     if (entry.isDirectory()) {
       processDirectory(fullPath);
-    } else if (entry.isFile() && entry.name === 'index.html') {
-      injectGTM(fullPath);
     } else if (entry.isFile() && entry.name.endsWith('.html')) {
       injectGTM(fullPath);
     }
