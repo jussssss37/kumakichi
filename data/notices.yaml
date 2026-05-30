@@ -3,9 +3,9 @@
 notices:
   - id: 1
     title: "臨時休業のお知らせ"
-    date: "2026-5-18"
+    date: "2026-5-30"
     content:
-    - 5/19(火)は終日お休みします。
+    - 5/31(日)は終日お休みします。
     type: "warning"
     icon: "⚠️"
     visible: true
